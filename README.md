@@ -30,7 +30,7 @@ The tool ships as either a pre-built Windows executable or Python source. The ex
 ### Option 1 — Windows executable (fastest)
 
 1. Go to the **Releases** tab of this repository.
-2. Download the latest `TO-Audit-Tool.exe`.
+2. Download the latest `TO.Audit.Tool.exe`.
 3. Place it in the same folder as the `data/` directory from this repo.
 4. Double-click it. First launch takes 10–20 seconds while Windows unpacks the bundle.
 
