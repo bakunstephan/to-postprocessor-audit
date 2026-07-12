@@ -64,6 +64,11 @@ If PowerShell blocks the activation script with an execution-policy error, run t
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
+## Full workflow demo
+
+Watch the tool audit the bumper case study end-to-end on YouTube:
+
+[![Watch the full workflow](https://img.youtube.com/vi/tdR0Bk818HI/maxresdefault.jpg)](https://youtu.be/tdR0Bk818HI)
 
 ## Using the tool
 
