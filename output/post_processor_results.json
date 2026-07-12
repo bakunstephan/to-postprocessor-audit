@@ -1,0 +1,1459 @@
+{
+  "audit_philosophy": "Negative filter \u2014 flags removals to reject. 'Not flagged' does NOT mean approved; engineering verification required.",
+  "calibration_caveats": "Junction detector threshold (20 high-density elements) and tunnel detector thresholds (2.5:1 aspect ratio, 3.0x asymmetry) are absolute, calibrated to ~3 mm mesh spacing. Coarser meshes may cause junction detector to under-trigger; verify rib/wall intersections manually. Statistical-floor calibration is articulated as future work.",
+  "config": {
+    "pp_yield_stress_mpa": 27.6,
+    "fos_critical_threshold": 1.5,
+    "density_removal_threshold": 0.5
+  },
+  "summary": {
+    "total_regions": 28,
+    "flagged_for_rejection": 28,
+    "not_flagged": 0
+  },
+  "regions": [
+    {
+      "region_id": 0,
+      "n_elements": 125,
+      "centroid_x": 454.35344000000003,
+      "centroid_y": 899.5234399999999,
+      "centroid_z": 1279.3519999999999,
+      "bbox_min": [
+        450.03,
+        897.18,
+        1278.0
+      ],
+      "bbox_max": [
+        457.0,
+        902.9,
+        1282.4
+      ],
+      "mean_density": 0.03821464800000002,
+      "min_overall_fos": 86.2432622451371,
+      "min_load_case_1_fos": 86.2432622451371,
+      "mean_load_case_1_fos": 624.073117456603,
+      "min_load_case_2_fos": 115.0479366402668,
+      "mean_load_case_2_fos": 422.2277137682323,
+      "min_load_case_3_fos": 408.7223723668136,
+      "mean_load_case_3_fos": 3351.3861742340696,
+      "pattern": "standard_removal",
+      "pattern_rationale": "Mixed neighborhood (90% high-density), aspect 1.6:1; standard removal pattern",
+      "mfg_filter": {
+        "passed": true,
+        "rationale": "Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels)."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.75 / 0.39). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 0.9527026634816783,
+      "complexity_max": 1.2525493556247667,
+      "complexity_pct_above_baseline": 4.8,
+      "complexity_neighborhood_high_count": 194,
+      "cplx_filter": {
+        "passed": true,
+        "rationale": "Region complexity within baseline (mean 0.953, 5% above baseline, 194 high-complexity elements within 18 mm)."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "structural"
+      ]
+    },
+    {
+      "region_id": 1,
+      "n_elements": 1792,
+      "centroid_x": 807.660161830357,
+      "centroid_y": 923.600859375,
+      "centroid_z": 1281.4541852678574,
+      "bbox_min": [
+        792.44,
+        909.0,
+        1278.1
+      ],
+      "bbox_max": [
+        819.32,
+        931.59,
+        1296.1
+      ],
+      "mean_density": 0.07950047712053569,
+      "min_overall_fos": 2.608880591724366,
+      "min_load_case_1_fos": 77.85613540197463,
+      "mean_load_case_1_fos": 640.8130319591562,
+      "min_load_case_2_fos": 999.0,
+      "mean_load_case_2_fos": 8834.606534209372,
+      "min_load_case_3_fos": 2.608880591724366,
+      "mean_load_case_3_fos": 23.518782271130426,
+      "pattern": "standard_removal",
+      "pattern_rationale": "Mixed neighborhood (95% high-density), aspect 1.5:1; standard removal pattern",
+      "mfg_filter": {
+        "passed": true,
+        "rationale": "Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels)."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.68 / 0.31). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 0.8752464411531633,
+      "complexity_max": 1.170644257271547,
+      "complexity_pct_above_baseline": 1.7299107142857142,
+      "complexity_neighborhood_high_count": 75,
+      "cplx_filter": {
+        "passed": true,
+        "rationale": "Region complexity within baseline (mean 0.875, 2% above baseline, 75 high-complexity elements within 18 mm)."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "structural"
+      ]
+    },
+    {
+      "region_id": 2,
+      "n_elements": 1945,
+      "centroid_x": 395.30887403598973,
+      "centroid_y": 923.7645141388175,
+      "centroid_z": 1281.6226735218506,
+      "bbox_min": [
+        383.27,
+        909.0,
+        1278.2
+      ],
+      "bbox_max": [
+        410.79,
+        931.94,
+        1296.9
+      ],
+      "mean_density": 0.0671925974293059,
+      "min_overall_fos": 3.501538266357956,
+      "min_load_case_1_fos": 80.57217924390599,
+      "mean_load_case_1_fos": 630.769028177975,
+      "min_load_case_2_fos": 3.501538266357956,
+      "mean_load_case_2_fos": 24.043950358109722,
+      "min_load_case_3_fos": 999.0,
+      "mean_load_case_3_fos": 9440.78529063207,
+      "pattern": "standard_removal",
+      "pattern_rationale": "Mixed neighborhood (96% high-density), aspect 1.5:1; standard removal pattern",
+      "mfg_filter": {
+        "passed": true,
+        "rationale": "Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels)."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.67 / 0.33). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 0.8732848669736097,
+      "complexity_max": 1.180012002152655,
+      "complexity_pct_above_baseline": 1.2339331619537275,
+      "complexity_neighborhood_high_count": 65,
+      "cplx_filter": {
+        "passed": true,
+        "rationale": "Region complexity within baseline (mean 0.873, 1% above baseline, 65 high-complexity elements within 18 mm)."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "structural"
+      ]
+    },
+    {
+      "region_id": 3,
+      "n_elements": 17265,
+      "centroid_x": 599.953412684622,
+      "centroid_y": 930.733822762815,
+      "centroid_z": 1290.9543643208806,
+      "bbox_min": [
+        430.98,
+        927.1,
+        1279.8
+      ],
+      "bbox_max": [
+        770.66,
+        932.1,
+        1302.5
+      ],
+      "mean_density": 0.032370228207355925,
+      "min_overall_fos": 6.972778374281565,
+      "min_load_case_1_fos": 6.972778374281565,
+      "mean_load_case_1_fos": 43.08185895295269,
+      "min_load_case_2_fos": 97.16599190283401,
+      "mean_load_case_2_fos": 604.3630985280012,
+      "min_load_case_3_fos": 98.28184812605714,
+      "mean_load_case_3_fos": 606.3929286149456,
+      "pattern": "standard_removal",
+      "pattern_rationale": "Mixed neighborhood (95% high-density), aspect 67.9:1; standard removal pattern",
+      "mfg_filter": {
+        "passed": true,
+        "rationale": "Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels)."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.89 / 0.55). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 0.974603569616045,
+      "complexity_max": 1.3177885654946804,
+      "complexity_pct_above_baseline": 6.162757022878656,
+      "complexity_neighborhood_high_count": 809,
+      "cplx_filter": {
+        "passed": true,
+        "rationale": "Region complexity within baseline (mean 0.975, 6% above baseline, 809 high-complexity elements within 18 mm)."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "structural"
+      ]
+    },
+    {
+      "region_id": 4,
+      "n_elements": 441,
+      "centroid_x": 387.4565532879819,
+      "centroid_y": 897.2034240362813,
+      "centroid_z": 1282.631065759637,
+      "bbox_min": [
+        383.26,
+        883.02,
+        1278.2
+      ],
+      "bbox_max": [
+        392.51,
+        907.21,
+        1288.2
+      ],
+      "mean_density": 0.0880367006802721,
+      "min_overall_fos": 3.8253638253638256,
+      "min_load_case_1_fos": 999.0,
+      "mean_load_case_1_fos": 8900.770978858796,
+      "min_load_case_2_fos": 3.8253638253638256,
+      "mean_load_case_2_fos": 12.322746492019208,
+      "min_load_case_3_fos": 999.0,
+      "mean_load_case_3_fos": 999.0,
+      "pattern": "standard_removal",
+      "pattern_rationale": "Mixed neighborhood (90% high-density), aspect 2.6:1; standard removal pattern",
+      "mfg_filter": {
+        "passed": true,
+        "rationale": "Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels)."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.83 / 0.45). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 0.9543440538226412,
+      "complexity_max": 1.1704877897429977,
+      "complexity_pct_above_baseline": 2.2675736961451247,
+      "complexity_neighborhood_high_count": 45,
+      "cplx_filter": {
+        "passed": true,
+        "rationale": "Region complexity within baseline (mean 0.954, 2% above baseline, 45 high-complexity elements within 18 mm)."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "structural"
+      ]
+    },
+    {
+      "region_id": 5,
+      "n_elements": 2853,
+      "centroid_x": 400.73538731160187,
+      "centroid_y": 854.677048720645,
+      "centroid_z": 1286.6661058534876,
+      "bbox_min": [
+        390.99,
+        828.66,
+        1278.1
+      ],
+      "bbox_max": [
+        409.66,
+        882.45,
+        1304.9
+      ],
+      "mean_density": 0.05027701121626357,
+      "min_overall_fos": 16.700450791153603,
+      "min_load_case_1_fos": 999.0,
+      "mean_load_case_1_fos": 999.0,
+      "min_load_case_2_fos": 16.700450791153603,
+      "mean_load_case_2_fos": 154.7398905740996,
+      "min_load_case_3_fos": 999.0,
+      "mean_load_case_3_fos": 999.0,
+      "pattern": "standard_removal",
+      "pattern_rationale": "Mixed neighborhood (96% high-density), aspect 2.9:1; standard removal pattern",
+      "mfg_filter": {
+        "passed": false,
+        "rationale": "Tunnel detected: elongated region (aspect ratio 2.9:1) with strongly asymmetric surroundings. One end at (391, 882, 1279) is buried in high-density material (287 dense neighbors within 5.0 mm), the other end at (409, 829, 1304) opens to a cavity (80 dense neighbors). The solver is attempting to tunnel through structural material to reach an interior space \u2014 manufacturing this would require undercut tooling and structurally compromises the wall the tunnel passes through."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.87 / 0.53). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 0.9809668547906711,
+      "complexity_max": 1.2356786289220012,
+      "complexity_pct_above_baseline": 6.905012267788293,
+      "complexity_neighborhood_high_count": 217,
+      "cplx_filter": {
+        "passed": true,
+        "rationale": "Region complexity within baseline (mean 0.981, 7% above baseline, 217 high-complexity elements within 18 mm)."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "manufacturing",
+        "structural"
+      ]
+    },
+    {
+      "region_id": 6,
+      "n_elements": 2758,
+      "centroid_x": 801.8207722987672,
+      "centroid_y": 854.3965337200871,
+      "centroid_z": 1286.927121102248,
+      "bbox_min": [
+        793.0,
+        828.71,
+        1278.1
+      ],
+      "bbox_max": [
+        811.28,
+        881.27,
+        1304.8
+      ],
+      "mean_density": 0.04664531544597535,
+      "min_overall_fos": 21.110601193207895,
+      "min_load_case_1_fos": 999.0,
+      "mean_load_case_1_fos": 999.0,
+      "min_load_case_2_fos": 999.0,
+      "mean_load_case_2_fos": 999.0,
+      "min_load_case_3_fos": 21.110601193207895,
+      "mean_load_case_3_fos": 160.40711596394056,
+      "pattern": "standard_removal",
+      "pattern_rationale": "Mixed neighborhood (95% high-density), aspect 2.9:1; standard removal pattern",
+      "mfg_filter": {
+        "passed": true,
+        "rationale": "Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels)."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.85 / 0.52). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 0.9837211529228829,
+      "complexity_max": 1.2440698464280242,
+      "complexity_pct_above_baseline": 7.142857142857143,
+      "complexity_neighborhood_high_count": 170,
+      "cplx_filter": {
+        "passed": true,
+        "rationale": "Region complexity within baseline (mean 0.984, 7% above baseline, 170 high-complexity elements within 18 mm)."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "structural"
+      ]
+    },
+    {
+      "region_id": 7,
+      "n_elements": 600,
+      "centroid_x": 752.7847666666667,
+      "centroid_y": 903.8438000000001,
+      "centroid_z": 1294.0796666666668,
+      "bbox_min": [
+        749.12,
+        900.11,
+        1284.0
+      ],
+      "bbox_max": [
+        756.46,
+        907.63,
+        1304.2
+      ],
+      "mean_density": 0.0010000000000000002,
+      "min_overall_fos": 181.85412136785925,
+      "min_load_case_1_fos": 181.85412136785925,
+      "mean_load_case_1_fos": 3455.230722658099,
+      "min_load_case_2_fos": 999.0,
+      "mean_load_case_2_fos": 2553.0428614630773,
+      "min_load_case_3_fos": 241.57549234135666,
+      "mean_load_case_3_fos": 4003.8694611841333,
+      "pattern": "standard_removal",
+      "pattern_rationale": "Mixed neighborhood (98% high-density), aspect 2.8:1; standard removal pattern",
+      "mfg_filter": {
+        "passed": false,
+        "rationale": "Tunnel detected: elongated region (aspect ratio 2.8:1) with strongly asymmetric surroundings. One end at (756, 903, 1284) is buried in high-density material (252 dense neighbors within 5.0 mm), the other end at (755, 901, 1304) opens to a cavity (48 dense neighbors). The solver is attempting to tunnel through structural material to reach an interior space \u2014 manufacturing this would require undercut tooling and structurally compromises the wall the tunnel passes through."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.54 / 0.54). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 1.0994764691460999,
+      "complexity_max": 1.211644770105594,
+      "complexity_pct_above_baseline": 39.0,
+      "cplx_filter": {
+        "passed": false,
+        "rationale": "Self-complexity rejection: 39% of region elements above baseline. Region partially overlaps a geometrically refined zone."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "manufacturing",
+        "structural",
+        "complexity"
+      ]
+    },
+    {
+      "region_id": 8,
+      "n_elements": 406,
+      "centroid_x": 815.1033497536945,
+      "centroid_y": 897.3103694581281,
+      "centroid_z": 1282.4012315270936,
+      "bbox_min": [
+        809.95,
+        882.22,
+        1278.2
+      ],
+      "bbox_max": [
+        818.93,
+        906.31,
+        1287.6
+      ],
+      "mean_density": 0.10798183251231525,
+      "min_overall_fos": 4.0472175379426645,
+      "min_load_case_1_fos": 999.0,
+      "mean_load_case_1_fos": 9053.64956319567,
+      "min_load_case_2_fos": 999.0,
+      "mean_load_case_2_fos": 999.0,
+      "min_load_case_3_fos": 4.0472175379426645,
+      "mean_load_case_3_fos": 12.334489839612795,
+      "pattern": "standard_removal",
+      "pattern_rationale": "Mixed neighborhood (88% high-density), aspect 2.7:1; standard removal pattern",
+      "mfg_filter": {
+        "passed": true,
+        "rationale": "Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels)."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.84 / 0.48). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 0.9444437139915394,
+      "complexity_max": 1.25175684547273,
+      "complexity_pct_above_baseline": 4.679802955665025,
+      "complexity_neighborhood_high_count": 120,
+      "cplx_filter": {
+        "passed": true,
+        "rationale": "Region complexity within baseline (mean 0.944, 5% above baseline, 120 high-complexity elements within 18 mm)."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "structural"
+      ]
+    },
+    {
+      "region_id": 9,
+      "n_elements": 94,
+      "centroid_x": 423.9287234042553,
+      "centroid_y": 921.0324468085107,
+      "centroid_z": 1278.5968085106383,
+      "bbox_min": [
+        418.52,
+        916.94,
+        1278.2
+      ],
+      "bbox_max": [
+        427.51,
+        924.66,
+        1279.9
+      ],
+      "mean_density": 0.07668144680851063,
+      "min_overall_fos": 45.627376425855516,
+      "min_load_case_1_fos": 71.44706186901372,
+      "mean_load_case_1_fos": 206.8389614033948,
+      "min_load_case_2_fos": 45.627376425855516,
+      "mean_load_case_2_fos": 63.43355916561522,
+      "min_load_case_3_fos": 594.7314550449819,
+      "mean_load_case_3_fos": 1487.8637160079843,
+      "pattern": "through_hole",
+      "pattern_rationale": "Elongated region (aspect ratio 5.3:1) suggests through-hole or tunnel through structural member",
+      "mfg_filter": {
+        "passed": false,
+        "rationale": "Through-hole tunnel requires undercut tooling; incompatible with single-action injection moulding."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.94 / 0.48). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 1.0224159572255846,
+      "complexity_max": 1.1647284557567428,
+      "complexity_pct_above_baseline": 8.51063829787234,
+      "complexity_neighborhood_high_count": 21,
+      "cplx_filter": {
+        "passed": true,
+        "rationale": "Region complexity within baseline (mean 1.022, 9% above baseline, 21 high-complexity elements within 18 mm)."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "manufacturing",
+        "structural"
+      ]
+    },
+    {
+      "region_id": 10,
+      "n_elements": 2057,
+      "centroid_x": 601.5082887700534,
+      "centroid_y": 921.0535294117648,
+      "centroid_z": 1289.408653378707,
+      "bbox_min": [
+        574.54,
+        920.23,
+        1275.8
+      ],
+      "bbox_max": [
+        628.01,
+        925.24,
+        1303.3
+      ],
+      "mean_density": 0.012556486631016044,
+      "min_overall_fos": 13.844996237772762,
+      "min_load_case_1_fos": 13.844996237772762,
+      "mean_load_case_1_fos": 83.87526097939784,
+      "min_load_case_2_fos": 428.8044744814728,
+      "mean_load_case_2_fos": 1882.2114630064323,
+      "min_load_case_3_fos": 505.4945054945054,
+      "mean_load_case_3_fos": 1876.6924422661195,
+      "pattern": "standard_removal",
+      "pattern_rationale": "Mixed neighborhood (89% high-density), aspect 10.7:1; standard removal pattern",
+      "mfg_filter": {
+        "passed": true,
+        "rationale": "Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels)."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.87 / 0.60). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 1.0844438507500247,
+      "complexity_max": 1.307469828816612,
+      "complexity_pct_above_baseline": 30.432668935342733,
+      "cplx_filter": {
+        "passed": false,
+        "rationale": "Self-complexity rejection: 30% of region elements above baseline. Region partially overlaps a geometrically refined zone."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "structural",
+        "complexity"
+      ]
+    },
+    {
+      "region_id": 11,
+      "n_elements": 37,
+      "centroid_x": 809.3556756756757,
+      "centroid_y": 906.7678378378378,
+      "centroid_z": 1283.527027027027,
+      "bbox_min": [
+        806.32,
+        902.47,
+        1280.2
+      ],
+      "bbox_max": [
+        813.05,
+        908.42,
+        1285.7
+      ],
+      "mean_density": 0.19810432432432432,
+      "min_overall_fos": 6.394439617723719,
+      "min_load_case_1_fos": 999.0,
+      "mean_load_case_1_fos": 11777.829588581091,
+      "min_load_case_2_fos": 999.0,
+      "mean_load_case_2_fos": 999.0,
+      "min_load_case_3_fos": 6.394439617723719,
+      "mean_load_case_3_fos": 17.55305569608605,
+      "pattern": "isolated_island",
+      "pattern_rationale": "Region surrounded by 71% high-density elements (mesa-and-depression pattern requiring multi-action tooling)",
+      "mfg_filter": {
+        "passed": false,
+        "rationale": "Mesa-and-depression pattern requires multi-action injection moulding tooling with sliding cores; not economically viable for typical consumer-product components."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Region adjacent to critical-load zone (distance 8.4 mm to nearest critical element at (817.7, 907.9, 1283.0) governed by load_case_3 load case). Material removal would weaken the load path serving the critical region."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 0.9619627766237311,
+      "complexity_max": 1.2414278831788366,
+      "complexity_pct_above_baseline": 13.513513513513514,
+      "complexity_neighborhood_high_count": 113,
+      "cplx_filter": {
+        "passed": true,
+        "rationale": "Region complexity within baseline (mean 0.962, 14% above baseline, 113 high-complexity elements within 18 mm)."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "manufacturing",
+        "structural"
+      ]
+    },
+    {
+      "region_id": 12,
+      "n_elements": 77,
+      "centroid_x": 779.5228571428572,
+      "centroid_y": 921.2183116883115,
+      "centroid_z": 1278.5077922077921,
+      "bbox_min": [
+        774.98,
+        917.62,
+        1278.2
+      ],
+      "bbox_max": [
+        785.81,
+        924.35,
+        1279.9
+      ],
+      "mean_density": 0.07898687012987013,
+      "min_overall_fos": 46.69458190584951,
+      "min_load_case_1_fos": 79.28300586004826,
+      "mean_load_case_1_fos": 211.67848539092438,
+      "min_load_case_2_fos": 601.1762143323893,
+      "mean_load_case_2_fos": 1469.883590050119,
+      "min_load_case_3_fos": 46.69458190584951,
+      "mean_load_case_3_fos": 64.39785686788807,
+      "pattern": "through_hole",
+      "pattern_rationale": "Elongated region (aspect ratio 6.4:1) suggests through-hole or tunnel through structural member",
+      "mfg_filter": {
+        "passed": false,
+        "rationale": "Through-hole tunnel requires undercut tooling; incompatible with single-action injection moulding."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.98 / 0.50). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 1.0144107673166678,
+      "complexity_max": 1.1350889327875622,
+      "complexity_pct_above_baseline": 3.896103896103896,
+      "complexity_neighborhood_high_count": 28,
+      "cplx_filter": {
+        "passed": true,
+        "rationale": "Region complexity within baseline (mean 1.014, 4% above baseline, 28 high-complexity elements within 18 mm)."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "manufacturing",
+        "structural"
+      ]
+    },
+    {
+      "region_id": 13,
+      "n_elements": 8,
+      "centroid_x": 811.48125,
+      "centroid_y": 905.0999999999999,
+      "centroid_z": 1289.9875000000002,
+      "bbox_min": [
+        811.32,
+        904.48,
+        1289.1
+      ],
+      "bbox_max": [
+        811.69,
+        905.66,
+        1291.0
+      ],
+      "mean_density": 0.001,
+      "min_overall_fos": 17.284298529895263,
+      "min_load_case_1_fos": 999.0,
+      "mean_load_case_1_fos": 12047.336102378886,
+      "min_load_case_2_fos": 999.0,
+      "mean_load_case_2_fos": 999.0,
+      "min_load_case_3_fos": 17.284298529895263,
+      "mean_load_case_3_fos": 24.53604897636556,
+      "pattern": "isolated_island",
+      "pattern_rationale": "Region surrounded by 97% high-density elements (mesa-and-depression pattern requiring multi-action tooling)",
+      "mfg_filter": {
+        "passed": false,
+        "rationale": "Mesa-and-depression pattern requires multi-action injection moulding tooling with sliding cores; not economically viable for typical consumer-product components."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.83 / 0.66). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 1.2862694463614923,
+      "complexity_max": 1.3805718563052478,
+      "complexity_pct_above_baseline": 100.0,
+      "cplx_filter": {
+        "passed": false,
+        "rationale": "Self-complexity rejection: region mean complexity 1.286 > baseline threshold 1.116. The region IS a geometrically distinguished feature (mesh refinement and density transitions indicate functional importance)."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "manufacturing",
+        "structural",
+        "complexity"
+      ]
+    },
+    {
+      "region_id": 14,
+      "n_elements": 595,
+      "centroid_x": 449.864218487395,
+      "centroid_y": 903.7463529411766,
+      "centroid_z": 1293.9880672268907,
+      "bbox_min": [
+        446.18,
+        900.0,
+        1284.0
+      ],
+      "bbox_max": [
+        453.51,
+        907.51,
+        1304.1
+      ],
+      "mean_density": 0.0010000000000000002,
+      "min_overall_fos": 149.65433102887354,
+      "min_load_case_1_fos": 149.65433102887354,
+      "mean_load_case_1_fos": 3543.1532524079585,
+      "min_load_case_2_fos": 252.8167078867821,
+      "mean_load_case_2_fos": 3849.2623125792898,
+      "min_load_case_3_fos": 990.4898618338417,
+      "mean_load_case_3_fos": 2494.814232947967,
+      "pattern": "standard_removal",
+      "pattern_rationale": "Mixed neighborhood (97% high-density), aspect 2.7:1; standard removal pattern",
+      "mfg_filter": {
+        "passed": false,
+        "rationale": "Tunnel detected: elongated region (aspect ratio 2.7:1) with strongly asymmetric surroundings. One end at (447, 904, 1284) is buried in high-density material (251 dense neighbors within 5.0 mm), the other end at (453, 903, 1304) opens to a cavity (49 dense neighbors). The solver is attempting to tunnel through structural material to reach an interior space \u2014 manufacturing this would require undercut tooling and structurally compromises the wall the tunnel passes through."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.55 / 0.54). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 1.1015794874275116,
+      "complexity_max": 1.2119422929871797,
+      "complexity_pct_above_baseline": 42.52100840336134,
+      "cplx_filter": {
+        "passed": false,
+        "rationale": "Self-complexity rejection: 43% of region elements above baseline. Region partially overlaps a geometrically refined zone."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "manufacturing",
+        "structural",
+        "complexity"
+      ]
+    },
+    {
+      "region_id": 15,
+      "n_elements": 116,
+      "centroid_x": 748.2379310344829,
+      "centroid_y": 899.7818103448274,
+      "centroid_z": 1279.4284482758624,
+      "bbox_min": [
+        745.61,
+        897.19,
+        1278.0
+      ],
+      "bbox_max": [
+        752.21,
+        903.12,
+        1282.6
+      ],
+      "mean_density": 0.040973655172413796,
+      "min_overall_fos": 83.47194919098744,
+      "min_load_case_1_fos": 83.47194919098744,
+      "mean_load_case_1_fos": 598.8750997619874,
+      "min_load_case_2_fos": 311.6795121538071,
+      "mean_load_case_2_fos": 3164.022245581097,
+      "min_load_case_3_fos": 123.11809969889595,
+      "mean_load_case_3_fos": 445.5079424828855,
+      "pattern": "standard_removal",
+      "pattern_rationale": "Mixed neighborhood (91% high-density), aspect 1.4:1; standard removal pattern",
+      "mfg_filter": {
+        "passed": true,
+        "rationale": "Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels)."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.77 / 0.40). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 0.9921376986237469,
+      "complexity_max": 1.1552127224777475,
+      "complexity_pct_above_baseline": 6.0344827586206895,
+      "complexity_neighborhood_high_count": 182,
+      "cplx_filter": {
+        "passed": true,
+        "rationale": "Region complexity within baseline (mean 0.992, 6% above baseline, 182 high-complexity elements within 18 mm)."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "structural"
+      ]
+    },
+    {
+      "region_id": 16,
+      "n_elements": 9,
+      "centroid_x": 449.81666666666666,
+      "centroid_y": 930.868888888889,
+      "centroid_z": 1289.8555555555556,
+      "bbox_min": [
+        449.22,
+        930.42,
+        1288.6
+      ],
+      "bbox_max": [
+        450.83,
+        931.37,
+        1291.3
+      ],
+      "mean_density": 0.21415555555555554,
+      "min_overall_fos": 16.821575499009597,
+      "min_load_case_1_fos": 16.821575499009597,
+      "mean_load_case_1_fos": 18.319713502225884,
+      "min_load_case_2_fos": 250.54466230936822,
+      "mean_load_case_2_fos": 332.79875333604616,
+      "min_load_case_3_fos": 610.6870229007634,
+      "mean_load_case_3_fos": 715.818926359862,
+      "pattern": "isolated_island",
+      "pattern_rationale": "Region surrounded by 86% high-density elements (mesa-and-depression pattern requiring multi-action tooling)",
+      "mfg_filter": {
+        "passed": false,
+        "rationale": "Mesa-and-depression pattern requires multi-action injection moulding tooling with sliding cores; not economically viable for typical consumer-product components."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.81 / 0.39). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 0.8971087171079254,
+      "complexity_max": 0.9750038340158655,
+      "complexity_pct_above_baseline": 0.0,
+      "complexity_neighborhood_high_count": 47,
+      "cplx_filter": {
+        "passed": true,
+        "rationale": "Region complexity within baseline (mean 0.897, 0% above baseline, 47 high-complexity elements within 18 mm)."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "manufacturing",
+        "structural"
+      ]
+    },
+    {
+      "region_id": 17,
+      "n_elements": 10,
+      "centroid_x": 579.0559999999999,
+      "centroid_y": 924.6099999999999,
+      "centroid_z": 1296.02,
+      "bbox_min": [
+        578.11,
+        924.47,
+        1294.6
+      ],
+      "bbox_max": [
+        580.01,
+        924.72,
+        1296.9
+      ],
+      "mean_density": 0.0010000000000000002,
+      "min_overall_fos": 33.76972959745504,
+      "min_load_case_1_fos": 33.76972959745504,
+      "mean_load_case_1_fos": 39.899461096108325,
+      "min_load_case_2_fos": 2522.217906833291,
+      "mean_load_case_2_fos": 3132.933834255996,
+      "min_load_case_3_fos": 1168.8105447038272,
+      "mean_load_case_3_fos": 1305.5147542255368,
+      "pattern": "through_hole",
+      "pattern_rationale": "Elongated region (aspect ratio 9.2:1) suggests through-hole or tunnel through structural member",
+      "mfg_filter": {
+        "passed": false,
+        "rationale": "Through-hole tunnel requires undercut tooling; incompatible with single-action injection moulding."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.87 / 0.57). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 1.2331423656315323,
+      "complexity_max": 1.3049731421245694,
+      "complexity_pct_above_baseline": 90.0,
+      "cplx_filter": {
+        "passed": false,
+        "rationale": "Self-complexity rejection: region mean complexity 1.233 > baseline threshold 1.116. The region IS a geometrically distinguished feature (mesh refinement and density transitions indicate functional importance)."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "manufacturing",
+        "structural",
+        "complexity"
+      ]
+    },
+    {
+      "region_id": 18,
+      "n_elements": 11,
+      "centroid_x": 601.3172727272729,
+      "centroid_y": 927.7645454545454,
+      "centroid_z": 1287.7545454545455,
+      "bbox_min": [
+        601.19,
+        927.12,
+        1286.5
+      ],
+      "bbox_max": [
+        601.44,
+        928.71,
+        1288.8
+      ],
+      "mean_density": 0.0010000000000000002,
+      "min_overall_fos": 46.46464646464647,
+      "min_load_case_1_fos": 46.46464646464647,
+      "mean_load_case_1_fos": 69.08258505232908,
+      "min_load_case_2_fos": 999.2758870383781,
+      "mean_load_case_2_fos": 1597.323815998585,
+      "min_load_case_3_fos": 968.3361108674678,
+      "mean_load_case_3_fos": 1511.175169962846,
+      "pattern": "through_hole",
+      "pattern_rationale": "Elongated region (aspect ratio 9.2:1) suggests through-hole or tunnel through structural member",
+      "mfg_filter": {
+        "passed": false,
+        "rationale": "Through-hole tunnel requires undercut tooling; incompatible with single-action injection moulding."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.78 / 0.67). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 1.2762919988509867,
+      "complexity_max": 1.3632452492818534,
+      "complexity_pct_above_baseline": 100.0,
+      "cplx_filter": {
+        "passed": false,
+        "rationale": "Self-complexity rejection: region mean complexity 1.276 > baseline threshold 1.116. The region IS a geometrically distinguished feature (mesh refinement and density transitions indicate functional importance)."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "manufacturing",
+        "structural",
+        "complexity"
+      ]
+    },
+    {
+      "region_id": 19,
+      "n_elements": 8,
+      "centroid_x": 582.64,
+      "centroid_y": 924.5725,
+      "centroid_z": 1299.2625,
+      "bbox_min": [
+        582.07,
+        924.43,
+        1298.3
+      ],
+      "bbox_max": [
+        583.15,
+        924.68,
+        1300.1
+      ],
+      "mean_density": 0.001,
+      "min_overall_fos": 26.470376675378233,
+      "min_load_case_1_fos": 26.470376675378233,
+      "mean_load_case_1_fos": 36.61853837510786,
+      "min_load_case_2_fos": 1309.111606507613,
+      "mean_load_case_2_fos": 1894.9899464032721,
+      "min_load_case_3_fos": 699.5311113927258,
+      "mean_load_case_3_fos": 932.5891007213386,
+      "pattern": "isolated_island",
+      "pattern_rationale": "Region surrounded by 80% high-density elements (mesa-and-depression pattern requiring multi-action tooling)",
+      "mfg_filter": {
+        "passed": false,
+        "rationale": "Mesa-and-depression pattern requires multi-action injection moulding tooling with sliding cores; not economically viable for typical consumer-product components."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.85 / 0.58). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 1.2712076245866029,
+      "complexity_max": 1.3281754581563145,
+      "complexity_pct_above_baseline": 100.0,
+      "cplx_filter": {
+        "passed": false,
+        "rationale": "Self-complexity rejection: region mean complexity 1.271 > baseline threshold 1.116. The region IS a geometrically distinguished feature (mesh refinement and density transitions indicate functional importance)."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "manufacturing",
+        "structural",
+        "complexity"
+      ]
+    },
+    {
+      "region_id": 20,
+      "n_elements": 14,
+      "centroid_x": 577.755,
+      "centroid_y": 924.567142857143,
+      "centroid_z": 1299.5714285714282,
+      "bbox_min": [
+        576.81,
+        924.44,
+        1297.3
+      ],
+      "bbox_max": [
+        578.55,
+        924.69,
+        1301.1
+      ],
+      "mean_density": 0.00971,
+      "min_overall_fos": 19.943277272973607,
+      "min_load_case_1_fos": 19.943277272973607,
+      "mean_load_case_1_fos": 30.205121004023397,
+      "min_load_case_2_fos": 2074.642011500733,
+      "mean_load_case_2_fos": 2889.6955252136545,
+      "min_load_case_3_fos": 1280.44537230341,
+      "mean_load_case_3_fos": 1547.1265385307238,
+      "pattern": "through_hole",
+      "pattern_rationale": "Elongated region (aspect ratio 15.2:1) suggests through-hole or tunnel through structural member",
+      "mfg_filter": {
+        "passed": false,
+        "rationale": "Through-hole tunnel requires undercut tooling; incompatible with single-action injection moulding."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.74 / 0.56). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 1.2712219148310224,
+      "complexity_max": 1.357227742620339,
+      "complexity_pct_above_baseline": 100.0,
+      "cplx_filter": {
+        "passed": false,
+        "rationale": "Self-complexity rejection: region mean complexity 1.271 > baseline threshold 1.116. The region IS a geometrically distinguished feature (mesh refinement and density transitions indicate functional importance)."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "manufacturing",
+        "structural",
+        "complexity"
+      ]
+    },
+    {
+      "region_id": 21,
+      "n_elements": 15,
+      "centroid_x": 569.0906666666666,
+      "centroid_y": 929.8580000000001,
+      "centroid_z": 1288.88,
+      "bbox_min": [
+        567.82,
+        929.71,
+        1287.4
+      ],
+      "bbox_max": [
+        570.28,
+        930.03,
+        1291.1
+      ],
+      "mean_density": 0.39037333333333335,
+      "min_overall_fos": 8.424908424908425,
+      "min_load_case_1_fos": 8.424908424908425,
+      "mean_load_case_1_fos": 8.897368944518304,
+      "min_load_case_2_fos": 486.30076645229497,
+      "mean_load_case_2_fos": 678.5021983049686,
+      "min_load_case_3_fos": 1103.0072934359077,
+      "mean_load_case_3_fos": 1888.5524896086254,
+      "pattern": "through_hole",
+      "pattern_rationale": "Elongated region (aspect ratio 11.6:1) suggests through-hole or tunnel through structural member",
+      "mfg_filter": {
+        "passed": false,
+        "rationale": "Through-hole tunnel requires undercut tooling; incompatible with single-action injection moulding."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.95 / 0.47). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 0.8726058758005479,
+      "complexity_max": 0.9033896795509723,
+      "complexity_pct_above_baseline": 0.0,
+      "complexity_neighborhood_high_count": 402,
+      "cplx_filter": {
+        "passed": true,
+        "rationale": "Region complexity within baseline (mean 0.873, 0% above baseline, 402 high-complexity elements within 18 mm)."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "manufacturing",
+        "structural"
+      ]
+    },
+    {
+      "region_id": 22,
+      "n_elements": 8,
+      "centroid_x": 386.90000000000003,
+      "centroid_y": 906.09125,
+      "centroid_z": 1279.5875,
+      "bbox_min": [
+        386.63,
+        905.06,
+        1278.9
+      ],
+      "bbox_max": [
+        387.27,
+        907.04,
+        1280.5
+      ],
+      "mean_density": 0.053575,
+      "min_overall_fos": 4.315703060865486,
+      "min_load_case_1_fos": 3374.3925176513744,
+      "mean_load_case_1_fos": 5785.55078555994,
+      "min_load_case_2_fos": 4.315703060865486,
+      "mean_load_case_2_fos": 5.37457335633135,
+      "min_load_case_3_fos": 999.0,
+      "mean_load_case_3_fos": 999.0,
+      "pattern": "standard_removal",
+      "pattern_rationale": "Mixed neighborhood (61% high-density), aspect 3.1:1; standard removal pattern",
+      "mfg_filter": {
+        "passed": true,
+        "rationale": "Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels)."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Region adjacent to critical-load zone (distance 3.1 mm to nearest critical element at (385.0, 907.8, 1281.4) governed by load_case_2 load case). Material removal would weaken the load path serving the critical region."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 1.0350031057700715,
+      "complexity_max": 1.1259888235619642,
+      "complexity_pct_above_baseline": 12.5,
+      "complexity_neighborhood_high_count": 34,
+      "cplx_filter": {
+        "passed": true,
+        "rationale": "Region complexity within baseline (mean 1.035, 12% above baseline, 34 high-complexity elements within 18 mm)."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "structural"
+      ]
+    },
+    {
+      "region_id": 23,
+      "n_elements": 185,
+      "centroid_x": 401.91843243243244,
+      "centroid_y": 883.898972972973,
+      "centroid_z": 1282.4124324324323,
+      "bbox_min": [
+        399.1,
+        874.99,
+        1278.5
+      ],
+      "bbox_max": [
+        404.97,
+        892.46,
+        1286.4
+      ],
+      "mean_density": 0.052100378378378366,
+      "min_overall_fos": 53.12289481281878,
+      "min_load_case_1_fos": 999.0,
+      "mean_load_case_1_fos": 999.0,
+      "min_load_case_2_fos": 53.12289481281878,
+      "mean_load_case_2_fos": 112.81260611087504,
+      "min_load_case_3_fos": 999.0,
+      "mean_load_case_3_fos": 999.0,
+      "pattern": "standard_removal",
+      "pattern_rationale": "Mixed neighborhood (95% high-density), aspect 3.0:1; standard removal pattern",
+      "mfg_filter": {
+        "passed": true,
+        "rationale": "Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels)."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.92 / 0.84). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 1.0551747213487195,
+      "complexity_max": 1.2107350813259432,
+      "complexity_pct_above_baseline": 17.83783783783784,
+      "complexity_neighborhood_high_count": 170,
+      "cplx_filter": {
+        "passed": true,
+        "rationale": "Region complexity within baseline (mean 1.055, 18% above baseline, 170 high-complexity elements within 18 mm)."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "structural"
+      ]
+    },
+    {
+      "region_id": 24,
+      "n_elements": 10,
+      "centroid_x": 627.879,
+      "centroid_y": 928.1049999999999,
+      "centroid_z": 1280.8799999999999,
+      "bbox_min": [
+        627.1,
+        927.85,
+        1279.1
+      ],
+      "bbox_max": [
+        628.45,
+        928.43,
+        1282.7
+      ],
+      "mean_density": 0.216493,
+      "min_overall_fos": 21.999043519846964,
+      "min_load_case_1_fos": 21.999043519846964,
+      "mean_load_case_1_fos": 31.546850870618282,
+      "min_load_case_2_fos": 609.5069839341909,
+      "mean_load_case_2_fos": 1028.61170054122,
+      "min_load_case_3_fos": 470.4278166013295,
+      "mean_load_case_3_fos": 548.8543050543994,
+      "pattern": "through_hole",
+      "pattern_rationale": "Elongated region (aspect ratio 6.2:1) suggests through-hole or tunnel through structural member",
+      "mfg_filter": {
+        "passed": false,
+        "rationale": "Through-hole tunnel requires undercut tooling; incompatible with single-action injection moulding."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.87 / 0.74). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 0.8753419690271853,
+      "complexity_max": 0.922150410100375,
+      "complexity_pct_above_baseline": 0.0,
+      "complexity_neighborhood_high_count": 410,
+      "cplx_filter": {
+        "passed": true,
+        "rationale": "Region complexity within baseline (mean 0.875, 0% above baseline, 410 high-complexity elements within 18 mm)."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "manufacturing",
+        "structural"
+      ]
+    },
+    {
+      "region_id": 25,
+      "n_elements": 35,
+      "centroid_x": 393.53828571428573,
+      "centroid_y": 906.4948571428571,
+      "centroid_z": 1283.2057142857143,
+      "bbox_min": [
+        389.3,
+        901.8,
+        1280.2
+      ],
+      "bbox_max": [
+        396.32,
+        908.42,
+        1284.9
+      ],
+      "mean_density": 0.13612062857142856,
+      "min_overall_fos": 5.045242665204277,
+      "min_load_case_1_fos": 999.0,
+      "mean_load_case_1_fos": 11060.022528110167,
+      "min_load_case_2_fos": 5.045242665204277,
+      "mean_load_case_2_fos": 19.14529389654237,
+      "min_load_case_3_fos": 999.0,
+      "mean_load_case_3_fos": 999.0,
+      "pattern": "standard_removal",
+      "pattern_rationale": "Mixed neighborhood (66% high-density), aspect 1.5:1; standard removal pattern",
+      "mfg_filter": {
+        "passed": true,
+        "rationale": "Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels)."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Region adjacent to critical-load zone (distance 8.8 mm to nearest critical element at (385.0, 907.8, 1281.4) governed by load_case_2 load case). Material removal would weaken the load path serving the critical region."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 0.9898402833476163,
+      "complexity_max": 1.1446077760963296,
+      "complexity_pct_above_baseline": 5.714285714285714,
+      "complexity_neighborhood_high_count": 45,
+      "cplx_filter": {
+        "passed": true,
+        "rationale": "Region complexity within baseline (mean 0.990, 6% above baseline, 45 high-complexity elements within 18 mm)."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "structural"
+      ]
+    },
+    {
+      "region_id": 26,
+      "n_elements": 175,
+      "centroid_x": 800.9,
+      "centroid_y": 884.5192571428571,
+      "centroid_z": 1282.4114285714286,
+      "bbox_min": [
+        798.05,
+        875.81,
+        1278.9
+      ],
+      "bbox_max": [
+        803.55,
+        892.76,
+        1286.4
+      ],
+      "mean_density": 0.04246798857142856,
+      "min_overall_fos": 65.80437503725338,
+      "min_load_case_1_fos": 999.0,
+      "mean_load_case_1_fos": 999.0,
+      "min_load_case_2_fos": 999.0,
+      "mean_load_case_2_fos": 999.0,
+      "min_load_case_3_fos": 65.80437503725338,
+      "mean_load_case_3_fos": 111.77186901634762,
+      "pattern": "standard_removal",
+      "pattern_rationale": "Mixed neighborhood (96% high-density), aspect 3.1:1; standard removal pattern",
+      "mfg_filter": {
+        "passed": true,
+        "rationale": "Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels)."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.91 / 0.83). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 1.0610851009519078,
+      "complexity_max": 1.2436323267822664,
+      "complexity_pct_above_baseline": 19.428571428571427,
+      "complexity_neighborhood_high_count": 149,
+      "cplx_filter": {
+        "passed": true,
+        "rationale": "Region complexity within baseline (mean 1.061, 19% above baseline, 149 high-complexity elements within 18 mm)."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "structural"
+      ]
+    },
+    {
+      "region_id": 27,
+      "n_elements": 9,
+      "centroid_x": 601.32,
+      "centroid_y": 927.2766666666666,
+      "centroid_z": 1281.7444444444443,
+      "bbox_min": [
+        601.32,
+        927.25,
+        1278.3
+      ],
+      "bbox_max": [
+        601.32,
+        927.29,
+        1285.2
+      ],
+      "mean_density": 0.001,
+      "min_overall_fos": 63.125393104236956,
+      "min_load_case_1_fos": 63.125393104236956,
+      "mean_load_case_1_fos": 72.44378991838283,
+      "min_load_case_2_fos": 491.4967500667795,
+      "mean_load_case_2_fos": 871.6982699728845,
+      "min_load_case_3_fos": 491.015833481587,
+      "mean_load_case_3_fos": 865.8840896503076,
+      "pattern": "through_hole",
+      "pattern_rationale": "Elongated region (aspect ratio 690.0:1) suggests through-hole or tunnel through structural member",
+      "mfg_filter": {
+        "passed": false,
+        "rationale": "Through-hole tunnel requires undercut tooling; incompatible with single-action injection moulding."
+      },
+      "struct_filter": {
+        "passed": false,
+        "rationale": "Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.92 / 0.70). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable."
+      },
+      "func_filter": {
+        "passed": true,
+        "rationale": "No manual functional zones defined (complexity filter provides primary functional protection)."
+      },
+      "complexity_mean": 1.0821026250111925,
+      "complexity_max": 1.1828185138915441,
+      "complexity_pct_above_baseline": 11.11111111111111,
+      "complexity_neighborhood_high_count": 774,
+      "cplx_filter": {
+        "passed": true,
+        "rationale": "Region complexity within baseline (mean 1.082, 11% above baseline, 774 high-complexity elements within 18 mm)."
+      },
+      "accepted": false,
+      "rejection_categories": [
+        "manufacturing",
+        "structural"
+      ]
+    }
+  ]
+}

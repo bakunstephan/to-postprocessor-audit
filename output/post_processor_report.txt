@@ -1,0 +1,543 @@
+======================================================================
+TOPOLOGY OPTIMIZATION AUDIT REPORT
+Conservative audit of solver-suggested material removals
+======================================================================
+
+AUDIT PHILOSOPHY
+----------------------------------------------------------------------
+This tool is a NEGATIVE FILTER. It identifies removals that should be
+REJECTED. It does not approve removals.
+
+'Not flagged' means: the tool's four filters did not catch a problem
+with this region. It does NOT mean the region is safe to remove.
+Engineering verification of each not-flagged region is still required.
+
+Material yield stress:     27.6 MPa
+FoS critical threshold:    1.5
+Density removal threshold: 0.5
+
+======================================================================
+SUMMARY
+======================================================================
+Total removal regions detected by solver: 28
+Flagged for rejection:                    28
+  - on Manufacturing (DFM) grounds:       15
+  - on Structural grounds:                28
+  - on Functional zone grounds:           0
+  - on Complexity grounds:                8
+Not flagged (verify independently):       0
+
+ELEMENT COUNT
+----------------------------------------------------------------------
+Solver-flagged removable elements:            31658
+Flagged for rejection by audit:               31658
+Not flagged by audit (verify independently):  0
+
+======================================================================
+CALIBRATION CAVEATS
+======================================================================
+
+The structural-junction detector uses an absolute threshold of 20 high-
+density elements within the probe radius to identify load-routing
+junctions. This threshold was calibrated against the bumper case study
+(mesh spacing ~3 mm). On parts with substantially coarser meshes (spacing
+> 6 mm), this threshold may not be reached even at genuine junctions,
+causing the detector to miss them.
+
+If your part has a coarser mesh than ~3 mm spacing: the structural
+filter's OTHER checks (FoS adjacency, critical-zone proximity) still fire
+correctly, but specifically the junction detector may under-trigger.
+Manually verify removal regions at visually identifiable rib/wall
+intersections before trusting any 'not flagged' verdict in those areas.
+
+Similarly: the tunnel detector uses an absolute aspect ratio of 2.5:1 and
+asymmetry of 3.0x. These are calibrated to typical automotive-component
+scales. Substantially different scales may need re-calibration.
+
+Statistical-floor calibration (max of absolute_floor and per-part
+statistic) was investigated but requires further validation; this is
+articulated as concrete future work.
+
+======================================================================
+PER-REGION DETAIL
+======================================================================
+
+[Region 00] FLAGGED FOR REJECTION
+  Elements:        125
+  Centroid (mm):   (454.4, 899.5, 1279.4)
+  Pattern:         standard_removal
+  Min FoS overall: 86.24
+    load_case_1: 86.24, load_case_2: 115.05, load_case_3: 408.72
+  Complexity:      mean 0.953, max 1.253, 5% elements above baseline
+
+  Manufacturing filter: PASS
+    Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels).
+  Structural filter:    FAIL (flag)
+    Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.75 / 0.39). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    PASS
+    Region complexity within baseline (mean 0.953, 5% above baseline, 194 high-complexity elements within 18 mm).
+
+[Region 01] FLAGGED FOR REJECTION
+  Elements:        1792
+  Centroid (mm):   (807.7, 923.6, 1281.5)
+  Pattern:         standard_removal
+  Min FoS overall: 2.61
+    load_case_1: 77.86, load_case_2: 999.00, load_case_3: 2.61
+  Complexity:      mean 0.875, max 1.171, 2% elements above baseline
+
+  Manufacturing filter: PASS
+    Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels).
+  Structural filter:    FAIL (flag)
+    Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.68 / 0.31). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    PASS
+    Region complexity within baseline (mean 0.875, 2% above baseline, 75 high-complexity elements within 18 mm).
+
+[Region 02] FLAGGED FOR REJECTION
+  Elements:        1945
+  Centroid (mm):   (395.3, 923.8, 1281.6)
+  Pattern:         standard_removal
+  Min FoS overall: 3.50
+    load_case_1: 80.57, load_case_2: 3.50, load_case_3: 999.00
+  Complexity:      mean 0.873, max 1.180, 1% elements above baseline
+
+  Manufacturing filter: PASS
+    Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels).
+  Structural filter:    FAIL (flag)
+    Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.67 / 0.33). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    PASS
+    Region complexity within baseline (mean 0.873, 1% above baseline, 65 high-complexity elements within 18 mm).
+
+[Region 03] FLAGGED FOR REJECTION
+  Elements:        17265
+  Centroid (mm):   (600.0, 930.7, 1291.0)
+  Pattern:         standard_removal
+  Min FoS overall: 6.97
+    load_case_1: 6.97, load_case_2: 97.17, load_case_3: 98.28
+  Complexity:      mean 0.975, max 1.318, 6% elements above baseline
+
+  Manufacturing filter: PASS
+    Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels).
+  Structural filter:    FAIL (flag)
+    Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.89 / 0.55). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    PASS
+    Region complexity within baseline (mean 0.975, 6% above baseline, 809 high-complexity elements within 18 mm).
+
+[Region 04] FLAGGED FOR REJECTION
+  Elements:        441
+  Centroid (mm):   (387.5, 897.2, 1282.6)
+  Pattern:         standard_removal
+  Min FoS overall: 3.83
+    load_case_1: 999.00, load_case_2: 3.83, load_case_3: 999.00
+  Complexity:      mean 0.954, max 1.170, 2% elements above baseline
+
+  Manufacturing filter: PASS
+    Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels).
+  Structural filter:    FAIL (flag)
+    Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.83 / 0.45). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    PASS
+    Region complexity within baseline (mean 0.954, 2% above baseline, 45 high-complexity elements within 18 mm).
+
+[Region 05] FLAGGED FOR REJECTION
+  Elements:        2853
+  Centroid (mm):   (400.7, 854.7, 1286.7)
+  Pattern:         standard_removal
+  Min FoS overall: 16.70
+    load_case_1: 999.00, load_case_2: 16.70, load_case_3: 999.00
+  Complexity:      mean 0.981, max 1.236, 7% elements above baseline
+
+  Manufacturing filter: FAIL (flag)
+    Tunnel detected: elongated region (aspect ratio 2.9:1) with strongly asymmetric surroundings. One end at (391, 882, 1279) is buried in high-density material (287 dense neighbors within 5.0 mm), the other end at (409, 829, 1304) opens to a cavity (80 dense neighbors). The solver is attempting to tunnel through structural material to reach an interior space — manufacturing this would require undercut tooling and structurally compromises the wall the tunnel passes through.
+  Structural filter:    FAIL (flag)
+    Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.87 / 0.53). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    PASS
+    Region complexity within baseline (mean 0.981, 7% above baseline, 217 high-complexity elements within 18 mm).
+
+[Region 06] FLAGGED FOR REJECTION
+  Elements:        2758
+  Centroid (mm):   (801.8, 854.4, 1286.9)
+  Pattern:         standard_removal
+  Min FoS overall: 21.11
+    load_case_1: 999.00, load_case_2: 999.00, load_case_3: 21.11
+  Complexity:      mean 0.984, max 1.244, 7% elements above baseline
+
+  Manufacturing filter: PASS
+    Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels).
+  Structural filter:    FAIL (flag)
+    Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.85 / 0.52). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    PASS
+    Region complexity within baseline (mean 0.984, 7% above baseline, 170 high-complexity elements within 18 mm).
+
+[Region 07] FLAGGED FOR REJECTION
+  Elements:        600
+  Centroid (mm):   (752.8, 903.8, 1294.1)
+  Pattern:         standard_removal
+  Min FoS overall: 181.85
+    load_case_1: 181.85, load_case_2: 999.00, load_case_3: 241.58
+  Complexity:      mean 1.099, max 1.212, 39% elements above baseline
+
+  Manufacturing filter: FAIL (flag)
+    Tunnel detected: elongated region (aspect ratio 2.8:1) with strongly asymmetric surroundings. One end at (756, 903, 1284) is buried in high-density material (252 dense neighbors within 5.0 mm), the other end at (755, 901, 1304) opens to a cavity (48 dense neighbors). The solver is attempting to tunnel through structural material to reach an interior space — manufacturing this would require undercut tooling and structurally compromises the wall the tunnel passes through.
+  Structural filter:    FAIL (flag)
+    Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.54 / 0.54). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    FAIL (flag)
+    Self-complexity rejection: 39% of region elements above baseline. Region partially overlaps a geometrically refined zone.
+
+[Region 08] FLAGGED FOR REJECTION
+  Elements:        406
+  Centroid (mm):   (815.1, 897.3, 1282.4)
+  Pattern:         standard_removal
+  Min FoS overall: 4.05
+    load_case_1: 999.00, load_case_2: 999.00, load_case_3: 4.05
+  Complexity:      mean 0.944, max 1.252, 5% elements above baseline
+
+  Manufacturing filter: PASS
+    Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels).
+  Structural filter:    FAIL (flag)
+    Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.84 / 0.48). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    PASS
+    Region complexity within baseline (mean 0.944, 5% above baseline, 120 high-complexity elements within 18 mm).
+
+[Region 09] FLAGGED FOR REJECTION
+  Elements:        94
+  Centroid (mm):   (423.9, 921.0, 1278.6)
+  Pattern:         through_hole
+  Min FoS overall: 45.63
+    load_case_1: 71.45, load_case_2: 45.63, load_case_3: 594.73
+  Complexity:      mean 1.022, max 1.165, 9% elements above baseline
+
+  Manufacturing filter: FAIL (flag)
+    Through-hole tunnel requires undercut tooling; incompatible with single-action injection moulding.
+  Structural filter:    FAIL (flag)
+    Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.94 / 0.48). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    PASS
+    Region complexity within baseline (mean 1.022, 9% above baseline, 21 high-complexity elements within 18 mm).
+
+[Region 10] FLAGGED FOR REJECTION
+  Elements:        2057
+  Centroid (mm):   (601.5, 921.1, 1289.4)
+  Pattern:         standard_removal
+  Min FoS overall: 13.84
+    load_case_1: 13.84, load_case_2: 428.80, load_case_3: 505.49
+  Complexity:      mean 1.084, max 1.307, 30% elements above baseline
+
+  Manufacturing filter: PASS
+    Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels).
+  Structural filter:    FAIL (flag)
+    Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.87 / 0.60). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    FAIL (flag)
+    Self-complexity rejection: 30% of region elements above baseline. Region partially overlaps a geometrically refined zone.
+
+[Region 11] FLAGGED FOR REJECTION
+  Elements:        37
+  Centroid (mm):   (809.4, 906.8, 1283.5)
+  Pattern:         isolated_island
+  Min FoS overall: 6.39
+    load_case_1: 999.00, load_case_2: 999.00, load_case_3: 6.39
+  Complexity:      mean 0.962, max 1.241, 14% elements above baseline
+
+  Manufacturing filter: FAIL (flag)
+    Mesa-and-depression pattern requires multi-action injection moulding tooling with sliding cores; not economically viable for typical consumer-product components.
+  Structural filter:    FAIL (flag)
+    Region adjacent to critical-load zone (distance 8.4 mm to nearest critical element at (817.7, 907.9, 1283.0) governed by load_case_3 load case). Material removal would weaken the load path serving the critical region.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    PASS
+    Region complexity within baseline (mean 0.962, 14% above baseline, 113 high-complexity elements within 18 mm).
+
+[Region 12] FLAGGED FOR REJECTION
+  Elements:        77
+  Centroid (mm):   (779.5, 921.2, 1278.5)
+  Pattern:         through_hole
+  Min FoS overall: 46.69
+    load_case_1: 79.28, load_case_2: 601.18, load_case_3: 46.69
+  Complexity:      mean 1.014, max 1.135, 4% elements above baseline
+
+  Manufacturing filter: FAIL (flag)
+    Through-hole tunnel requires undercut tooling; incompatible with single-action injection moulding.
+  Structural filter:    FAIL (flag)
+    Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.98 / 0.50). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    PASS
+    Region complexity within baseline (mean 1.014, 4% above baseline, 28 high-complexity elements within 18 mm).
+
+[Region 13] FLAGGED FOR REJECTION
+  Elements:        8
+  Centroid (mm):   (811.5, 905.1, 1290.0)
+  Pattern:         isolated_island
+  Min FoS overall: 17.28
+    load_case_1: 999.00, load_case_2: 999.00, load_case_3: 17.28
+  Complexity:      mean 1.286, max 1.381, 100% elements above baseline
+
+  Manufacturing filter: FAIL (flag)
+    Mesa-and-depression pattern requires multi-action injection moulding tooling with sliding cores; not economically viable for typical consumer-product components.
+  Structural filter:    FAIL (flag)
+    Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.83 / 0.66). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    FAIL (flag)
+    Self-complexity rejection: region mean complexity 1.286 > baseline threshold 1.116. The region IS a geometrically distinguished feature (mesh refinement and density transitions indicate functional importance).
+
+[Region 14] FLAGGED FOR REJECTION
+  Elements:        595
+  Centroid (mm):   (449.9, 903.7, 1294.0)
+  Pattern:         standard_removal
+  Min FoS overall: 149.65
+    load_case_1: 149.65, load_case_2: 252.82, load_case_3: 990.49
+  Complexity:      mean 1.102, max 1.212, 43% elements above baseline
+
+  Manufacturing filter: FAIL (flag)
+    Tunnel detected: elongated region (aspect ratio 2.7:1) with strongly asymmetric surroundings. One end at (447, 904, 1284) is buried in high-density material (251 dense neighbors within 5.0 mm), the other end at (453, 903, 1304) opens to a cavity (49 dense neighbors). The solver is attempting to tunnel through structural material to reach an interior space — manufacturing this would require undercut tooling and structurally compromises the wall the tunnel passes through.
+  Structural filter:    FAIL (flag)
+    Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.55 / 0.54). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    FAIL (flag)
+    Self-complexity rejection: 43% of region elements above baseline. Region partially overlaps a geometrically refined zone.
+
+[Region 15] FLAGGED FOR REJECTION
+  Elements:        116
+  Centroid (mm):   (748.2, 899.8, 1279.4)
+  Pattern:         standard_removal
+  Min FoS overall: 83.47
+    load_case_1: 83.47, load_case_2: 311.68, load_case_3: 123.12
+  Complexity:      mean 0.992, max 1.155, 6% elements above baseline
+
+  Manufacturing filter: PASS
+    Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels).
+  Structural filter:    FAIL (flag)
+    Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.77 / 0.40). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    PASS
+    Region complexity within baseline (mean 0.992, 6% above baseline, 182 high-complexity elements within 18 mm).
+
+[Region 16] FLAGGED FOR REJECTION
+  Elements:        9
+  Centroid (mm):   (449.8, 930.9, 1289.9)
+  Pattern:         isolated_island
+  Min FoS overall: 16.82
+    load_case_1: 16.82, load_case_2: 250.54, load_case_3: 610.69
+  Complexity:      mean 0.897, max 0.975, 0% elements above baseline
+
+  Manufacturing filter: FAIL (flag)
+    Mesa-and-depression pattern requires multi-action injection moulding tooling with sliding cores; not economically viable for typical consumer-product components.
+  Structural filter:    FAIL (flag)
+    Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.81 / 0.39). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    PASS
+    Region complexity within baseline (mean 0.897, 0% above baseline, 47 high-complexity elements within 18 mm).
+
+[Region 17] FLAGGED FOR REJECTION
+  Elements:        10
+  Centroid (mm):   (579.1, 924.6, 1296.0)
+  Pattern:         through_hole
+  Min FoS overall: 33.77
+    load_case_1: 33.77, load_case_2: 2522.22, load_case_3: 1168.81
+  Complexity:      mean 1.233, max 1.305, 90% elements above baseline
+
+  Manufacturing filter: FAIL (flag)
+    Through-hole tunnel requires undercut tooling; incompatible with single-action injection moulding.
+  Structural filter:    FAIL (flag)
+    Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.87 / 0.57). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    FAIL (flag)
+    Self-complexity rejection: region mean complexity 1.233 > baseline threshold 1.116. The region IS a geometrically distinguished feature (mesh refinement and density transitions indicate functional importance).
+
+[Region 18] FLAGGED FOR REJECTION
+  Elements:        11
+  Centroid (mm):   (601.3, 927.8, 1287.8)
+  Pattern:         through_hole
+  Min FoS overall: 46.46
+    load_case_1: 46.46, load_case_2: 999.28, load_case_3: 968.34
+  Complexity:      mean 1.276, max 1.363, 100% elements above baseline
+
+  Manufacturing filter: FAIL (flag)
+    Through-hole tunnel requires undercut tooling; incompatible with single-action injection moulding.
+  Structural filter:    FAIL (flag)
+    Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.78 / 0.67). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    FAIL (flag)
+    Self-complexity rejection: region mean complexity 1.276 > baseline threshold 1.116. The region IS a geometrically distinguished feature (mesh refinement and density transitions indicate functional importance).
+
+[Region 19] FLAGGED FOR REJECTION
+  Elements:        8
+  Centroid (mm):   (582.6, 924.6, 1299.3)
+  Pattern:         isolated_island
+  Min FoS overall: 26.47
+    load_case_1: 26.47, load_case_2: 1309.11, load_case_3: 699.53
+  Complexity:      mean 1.271, max 1.328, 100% elements above baseline
+
+  Manufacturing filter: FAIL (flag)
+    Mesa-and-depression pattern requires multi-action injection moulding tooling with sliding cores; not economically viable for typical consumer-product components.
+  Structural filter:    FAIL (flag)
+    Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.85 / 0.58). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    FAIL (flag)
+    Self-complexity rejection: region mean complexity 1.271 > baseline threshold 1.116. The region IS a geometrically distinguished feature (mesh refinement and density transitions indicate functional importance).
+
+[Region 20] FLAGGED FOR REJECTION
+  Elements:        14
+  Centroid (mm):   (577.8, 924.6, 1299.6)
+  Pattern:         through_hole
+  Min FoS overall: 19.94
+    load_case_1: 19.94, load_case_2: 2074.64, load_case_3: 1280.45
+  Complexity:      mean 1.271, max 1.357, 100% elements above baseline
+
+  Manufacturing filter: FAIL (flag)
+    Through-hole tunnel requires undercut tooling; incompatible with single-action injection moulding.
+  Structural filter:    FAIL (flag)
+    Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.74 / 0.56). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    FAIL (flag)
+    Self-complexity rejection: region mean complexity 1.271 > baseline threshold 1.116. The region IS a geometrically distinguished feature (mesh refinement and density transitions indicate functional importance).
+
+[Region 21] FLAGGED FOR REJECTION
+  Elements:        15
+  Centroid (mm):   (569.1, 929.9, 1288.9)
+  Pattern:         through_hole
+  Min FoS overall: 8.42
+    load_case_1: 8.42, load_case_2: 486.30, load_case_3: 1103.01
+  Complexity:      mean 0.873, max 0.903, 0% elements above baseline
+
+  Manufacturing filter: FAIL (flag)
+    Through-hole tunnel requires undercut tooling; incompatible with single-action injection moulding.
+  Structural filter:    FAIL (flag)
+    Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.95 / 0.47). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    PASS
+    Region complexity within baseline (mean 0.873, 0% above baseline, 402 high-complexity elements within 18 mm).
+
+[Region 22] FLAGGED FOR REJECTION
+  Elements:        8
+  Centroid (mm):   (386.9, 906.1, 1279.6)
+  Pattern:         standard_removal
+  Min FoS overall: 4.32
+    load_case_1: 3374.39, load_case_2: 4.32, load_case_3: 999.00
+  Complexity:      mean 1.035, max 1.126, 12% elements above baseline
+
+  Manufacturing filter: PASS
+    Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels).
+  Structural filter:    FAIL (flag)
+    Region adjacent to critical-load zone (distance 3.1 mm to nearest critical element at (385.0, 907.8, 1281.4) governed by load_case_2 load case). Material removal would weaken the load path serving the critical region.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    PASS
+    Region complexity within baseline (mean 1.035, 12% above baseline, 34 high-complexity elements within 18 mm).
+
+[Region 23] FLAGGED FOR REJECTION
+  Elements:        185
+  Centroid (mm):   (401.9, 883.9, 1282.4)
+  Pattern:         standard_removal
+  Min FoS overall: 53.12
+    load_case_1: 999.00, load_case_2: 53.12, load_case_3: 999.00
+  Complexity:      mean 1.055, max 1.211, 18% elements above baseline
+
+  Manufacturing filter: PASS
+    Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels).
+  Structural filter:    FAIL (flag)
+    Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.92 / 0.84). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    PASS
+    Region complexity within baseline (mean 1.055, 18% above baseline, 170 high-complexity elements within 18 mm).
+
+[Region 24] FLAGGED FOR REJECTION
+  Elements:        10
+  Centroid (mm):   (627.9, 928.1, 1280.9)
+  Pattern:         through_hole
+  Min FoS overall: 22.00
+    load_case_1: 22.00, load_case_2: 609.51, load_case_3: 470.43
+  Complexity:      mean 0.875, max 0.922, 0% elements above baseline
+
+  Manufacturing filter: FAIL (flag)
+    Through-hole tunnel requires undercut tooling; incompatible with single-action injection moulding.
+  Structural filter:    FAIL (flag)
+    Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.87 / 0.74). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    PASS
+    Region complexity within baseline (mean 0.875, 0% above baseline, 410 high-complexity elements within 18 mm).
+
+[Region 25] FLAGGED FOR REJECTION
+  Elements:        35
+  Centroid (mm):   (393.5, 906.5, 1283.2)
+  Pattern:         standard_removal
+  Min FoS overall: 5.05
+    load_case_1: 999.00, load_case_2: 5.05, load_case_3: 999.00
+  Complexity:      mean 0.990, max 1.145, 6% elements above baseline
+
+  Manufacturing filter: PASS
+    Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels).
+  Structural filter:    FAIL (flag)
+    Region adjacent to critical-load zone (distance 8.8 mm to nearest critical element at (385.0, 907.8, 1281.4) governed by load_case_2 load case). Material removal would weaken the load path serving the critical region.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    PASS
+    Region complexity within baseline (mean 0.990, 6% above baseline, 45 high-complexity elements within 18 mm).
+
+[Region 26] FLAGGED FOR REJECTION
+  Elements:        175
+  Centroid (mm):   (800.9, 884.5, 1282.4)
+  Pattern:         standard_removal
+  Min FoS overall: 65.80
+    load_case_1: 999.00, load_case_2: 999.00, load_case_3: 65.80
+  Complexity:      mean 1.061, max 1.244, 19% elements above baseline
+
+  Manufacturing filter: PASS
+    Geometry compatible with single-action injection moulding (continuous walls, no detected undercuts or tunnels).
+  Structural filter:    FAIL (flag)
+    Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.91 / 0.83). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    PASS
+    Region complexity within baseline (mean 1.061, 19% above baseline, 149 high-complexity elements within 18 mm).
+
+[Region 27] FLAGGED FOR REJECTION
+  Elements:        9
+  Centroid (mm):   (601.3, 927.3, 1281.7)
+  Pattern:         through_hole
+  Min FoS overall: 63.13
+    load_case_1: 63.13, load_case_2: 491.50, load_case_3: 491.02
+  Complexity:      mean 1.082, max 1.183, 11% elements above baseline
+
+  Manufacturing filter: FAIL (flag)
+    Through-hole tunnel requires undercut tooling; incompatible with single-action injection moulding.
+  Structural filter:    FAIL (flag)
+    Structural junction detected: removal region sits at a 3D corner (three or more structural members meet). Surrounding high-density material extends in multiple directions (principal singular values: 1.00 / 0.92 / 0.70). Material at structural junctions routes loads between the joined members; removing it weakens the entire load path even if the region's current FoS appears acceptable.
+  Functional filter:    PASS
+    No manual functional zones defined (complexity filter provides primary functional protection).
+  Complexity filter:    PASS
+    Region complexity within baseline (mean 1.082, 11% above baseline, 774 high-complexity elements within 18 mm).
+
+======================================================================
+END OF REPORT
+======================================================================
