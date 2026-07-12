@@ -2,7 +2,7 @@
 
 A Python tool that audits SolidWorks topology-optimisation output against four orthogonal engineering filters — Manufacturing, Structural, Functional, and Complexity — and flags solver-proposed removals that would fail in the real world.
 
-![Isometric view of the bumper after audit](output/screenshots/view_isometric.png)
+![TO Post-Processor demo — audit running on the bumper case study](output/screenshots/Hero.gif)
 
 ## The problem this solves
 
