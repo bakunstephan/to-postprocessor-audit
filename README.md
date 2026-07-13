@@ -68,7 +68,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 Watch the tool audit the bumper case study end-to-end on YouTube:
 
-[![Watch the full workflow](https://img.youtube.com/vi/tdR0Bk818HI/maxresdefault.jpg)](https://youtu.be/tdR0Bk818HI)
+[![Watch the full workflow](https://img.youtube.com/vi/95eK3i6p6Kc/maxresdefault.jpg)](https://youtu.be/95eK3i6p6Kc)
 
 ## Using the tool
 
